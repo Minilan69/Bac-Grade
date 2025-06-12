@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculateur Bac Général</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Calculateur de Note au Bac Général</h1>
+
+    <!-- Slider de mode -->
+    <section class="slider-section">
+      <h2>Choisis ton mode de saisie</h2>
+      <div class="slider-container">
+        <input type="radio" name="mode" id="mode1" value="1" checked>
+        <input type="radio" name="mode" id="mode2" value="2">
+        <input type="radio" name="mode" id="mode3" value="3">
+
+        <div class="slider-labels">
+          <label for="mode1">Trimestres</label>
+          <label for="mode2">Relevé 1re + Term</label>
+          <label for="mode3">Relevés globaux</label>
+        </div>
+
+        <div class="slider-indicator"></div>
+      </div>
+    </section>
+
+    <!-- Mode 1 : Trimestres par trimestre -->
+    <section id="mode1-section" class="mode-section">
+      <h2>Mode 1 : Notes par trimestre</h2>
+      <p>Entre les notes pour chaque trimestre en Première et Terminale</p>
+      <!-- Ex: Mathématiques -->
+      <fieldset class="history">
+        <legend>Histoire-Géo</legend>
+        <label>1re T1 <input type="number" min="0" max="20"></label>
+        <label>1re T2 <input type="number" min="0" max="20"></label>
+        <label>1re T3 <input type="number" min="0" max="20"></label>
+        <label>Term T1 <input type="number" min="0" max="20"></label>
+        <label>Term T2 <input type="number" min="0" max="20"></label>
+        <label>Term T3 <input type="number" min="0" max="20"></label>
+      </fieldset>
+        <fieldset class="languageA">
+            <legend>Langue Vivante A</legend>
+            <label>1re T1 <input type="number" min="0" max="20"></label>
+            <label>1re T2 <input type="number" min="0" max="20"></label>
+            <label>1re T3 <input type="number" min="0" max="20"></label>
+            <label>Term T1 <input type="number" min="0" max="20"></label>
+            <label>Term T2 <input type="number" min="0" max="20"></label>
+            <label>Term T3 <input type="number" min="0" max="20"></label>
+        </fieldset>
+        <fieldset class="languageB">
+                <legend>Langue Vivante B</legend>
+                <label>1re T1 <input type="number" min="0" max="20"></label>
+                <label>1re T2 <input type="number" min="0" max="20"></label>
+                <label>1re T3 <input type="number" min="0" max="20"></label>
+                <label>Term T1 <input type="number" min="0" max="20"></label>
+                <label>Term T2 <input type="number" min="0" max="20"></label>
+                <label>Term T3 <input type="number" min="0" max="20"></label>
+        </fieldset>
+        <fieldset class="ES">
+                <legend>Enseignement Scientifique</legend>
+                <label>1re T1 <input type="number" min="0" max="20"></label>
+                <label>1re T2 <input type="number" min="0" max="20"></label>
+                <label>1re T3 <input type="number" min="0" max="20"></label>
+                <label>Term T1 <input type="number" min="0" max="20"></label>
+                <label>Term T2 <input type="number" min="0" max="20"></label>
+                <label>Term T3 <input type="number" min="0" max="20"></label>
+        </fieldset>
+        <fieldset class="EMC">
+                <legend>Enseignement Moral Et Civique</legend>
+                <label>1re T1 <input type="number" min="0" max="20"></label>
+                <label>1re T2 <input type="number" min="0" max="20"></label>
+                <label>1re T3 <input type="number" min="0" max="20"></label>
+                <label>Term T1 <input type="number" min="0" max="20"></label>
+                <label>Term T2 <input type="number" min="0" max="20"></label>
+                <label>Term T3 <input type="number" min="0" max="20"></label>
+        </fieldset>
+        <fieldset class="speleft">
+                <legend>Spécialité Abandonnée</legend>
+                <label>1re T1 <input type="number" min="0" max="20"></label>
+                <label>1re T2 <input type="number" min="0" max="20"></label>
+                <label>1re T3 <input type="number" min="0" max="20"></label>
+        </fieldset>
+        <fieldset class="option">
+                <legend>Option (facultatif)</legend>
+                <label>1re T1 <input type="number" min="0" max="20"></label>
+                <label>1re T2 <input type="number" min="0" max="20"></label>
+                <label>1re T3 <input type="number" min="0" max="20"></label>
+                <label>Term T1 <input type="number" min="0" max="20"></label>
+                <label>Term T2 <input type="number" min="0" max="20"></label>
+                <label>Term T3 <input type="number" min="0" max="20"></label>
+    </section>
+
+    <!-- Mode 2 : Moyenne de 1re + trimestres de Term -->
+    <section id="mode2-section" class="mode-section hidden">
+      <h2>Mode 2 : Moyenne 1re + Trimestres Term</h2>
+      <p>Entre la moyenne globale de Première et les trimestres de Terminale</p>
+      <fieldset class="history">
+        <legend>Histoire-Géo</legend>
+        <label>Moyenne 1re <input type="number" min="0" max="20"></label>
+        <label>Term T1 <input type="number" min="0" max="20"></label>
+        <label>Term T2 <input type="number" min="0" max="20"></label>
+        <label>Term T3 <input type="number" min="0" max="20"></label>
+      </fieldset>
+      <fieldset class="languageA">
+            <legend>Langue Vivante A</legend>
+            <label>Moyenne 1re <input type="number" min="0" max="20"></label>
+            <label>Term T1 <input type="number" min="0" max="20"></label>
+            <label>Term T2 <input type="number" min="0" max="20"></label>
+            <label>Term T3 <input type="number" min="0" max="20"></label>
+        </fieldset>
+        <fieldset class="languageB">
+                <legend>Langue Vivante B</legend>
+                <label>Moyenne 1re <input type="number" min="0" max="20"></label>
+                <label>Term T1 <input type="number" min="0" max="20"></label>
+                <label>Term T2 <input type="number" min="0" max="20"></label>
+                <label>Term T3 <input type="number" min="0" max="20"></label>
+        </fieldset>
+        <fieldset class="ES">
+                <legend>Enseignement Scientifique</legend>
+                <label>Moyenne 1re <input type="number" min="0" max="20"></label>
+                <label>Term T1 <input type="number" min="0" max="20"></label>
+                <label>Term T2 <input type="number" min="0" max="20"></label>
+                <label>Term T3 <input type="number" min="0" max="20"></label>
+        </fieldset>
+        <fieldset class="EMC">
+                <legend>Enseignement Moral Et Civique</legend>
+                <label>Moyenne 1re <input type="number" min="0" max="20"></label>
+                <label>Term T1 <input type="number" min="0" max="20"></label>
+                <label>Term T2 <input type="number" min="0" max="20"></label>
+                <label>Term T3 <input type="number" min="0" max="20"></label>
+        </fieldset>
+        <fieldset class="speleft">
+                <legend>Spécialité Abandonnée</legend>
+                <label>Moyenne 1re <input type="number" min="0" max="20"></label>
+        </fieldset>
+        <fieldset class="option">
+                <legend>Option (facultatif)</legend>
+                <label>Moyenne 1re <input type="number" min="0" max="20"></label>
+                <label>Term T1 <input type="number" min="0" max="20"></label>
+                <label>Term T2 <input type="number" min="0" max="20"></label>
+                <label>Term T3 <input type="number" min="0" max="20"></label>
+        </fieldset>
+    </section>
+
+    <!-- Mode 3 : Relevés globaux -->
+    <section id="mode3-section" class="mode-section hidden">
+      <h2>Mode 3 : Relevés globaux</h2>
+      <p>Entre la moyenne globale pour chaque année</p>
+      <fieldset class="history">
+        <legend>Histoire-Géo</legend>
+        <label>Moyenne 1re <input type="number" min="0" max="20"></label>
+        <label>Moyenne Term <input type="number" min="0" max="20"></label>
+      </fieldset>
+        <fieldset class="languageA">
+                <legend>Langue Vivante A</legend>
+                <label>Moyenne 1re <input type="number" min="0" max="20"></label>
+                <label>Moyenne Term <input type="number" min="0" max="20"></label>
+            </fieldset>
+            <fieldset class="languageB">
+                    <legend>Langue Vivante B</legend>
+                    <label>Moyenne 1re <input type="number" min="0" max="20"></label>
+                    <label>Moyenne Term <input type="number" min="0" max="20"></label>
+            </fieldset>
+            <fieldset class="ES">
+                    <legend>Enseignement Scientifique</legend>
+                    <label>Moyenne 1re <input type="number" min="0" max="20"></label>
+                    <label>Moyenne Term <input type="number" min="0" max="20"></label>
+            </fieldset>
+            <fieldset class="EMC">
+                    <legend>Enseignement Moral Et Civique</legend>
+                    <label>Moyenne 1re <input type="number" min="0" max="20"></label>
+                    <label>Moyenne Term <input type="number" min="0" max="20"></label>
+            </fieldset>
+            <fieldset class="speleft">
+                    <legend>Spécialité Abandonnée</legend>
+                    <label>Moyenne 1re <input type="number" min="0" max="20"></label>
+            </fieldset>
+            <fieldset class="option">
+                    <legend>Option (facultatif)</legend>
+                    <label>Moyenne 1re <input type="number" min="0" max="20"></label>
+                    <label>Moyenne Term <input type="number" min="0" max="20"></label>
+        </fieldset>
+    </section>
+
+    <section id="epreuves-premiere" class="mode-section active">
+      <h2>Épreuves Anticipées</h2>
+        <p>Entre les notes pour les épreuves Anticipées</p>
+      <fieldset class="fr-written">
+        <legend>Français Écrit</legend>
+        <label>Note <input type="number" min="0" max="20"></label>
+      </fieldset>
+      <fieldset class="fr-oral">
+        <legend>Français Oral</legend>
+        <label>Note <input type="number" min="0" max="20"></label>
+      </fieldset>
+    </section>
+
+    <section id="epreuves-projection" class="mode-section active">
+      <h2>Projection Épreuves Finales</h2>
+      <p>Entre vos projections pour les épreuves finales</p>
+        <fieldset class="sport">
+            <legend>Sport</legend>
+            <label>Projection<input type="number" min="0" max="20"></label>
+        </fieldset>
+      <fieldset class="spe1">
+        <legend>Spécialité 1</legend>
+        <label>Projection<input type="number" min="0" max="20"></label>
+      </fieldset>
+      <fieldset class="spe2">
+        <legend>Spécialité 2</legend>
+        <label>Projection<input type="number" min="0" max="20"></label>
+      </fieldset>
+      <fieldset class="philo">
+        <legend>Philosophie</legend>
+        <label>Projection<input type="number" min="0" max="20"></label>
+      </fieldset>
+        <fieldset class="grand-oral">
+            <legend>Grand Oral</legend>
+            <label>Projection<input type="number" min="0" max="20"></label>
+    </section>
+
+    <!-- Résultat -->
+    <section class="section result">
+      <button id="calculateBtn">Calculer ma note</button>
+      <div id="resultContainer">
+        <h2>Résultat</h2>
+        <p id="resultText">Entrez vos notes pour voir votre moyenne</p>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
