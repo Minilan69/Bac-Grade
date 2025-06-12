@@ -125,7 +125,7 @@ function calculerMode2() {
 function calculerMode3() {
   // Mode 3 : Moyenne globale 1re et Term
   let total = 0, totalCoeff = 0;
-  ['history', 'languageA', 'languageB', 'ES', 'EMC', 'option'].forEach(matiere => {
+  ['history', 'languageA', 'languageB', 'ES', 'EMC'].forEach(matiere => {
     const fs = document.querySelector(`#mode3-section fieldset.${matiere}`);
     const notes = getInputsValues(fs);
     // notes[0] = Moyenne 1re, notes[1] = Moyenne Term
